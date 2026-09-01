@@ -27,7 +27,9 @@ npm -v
 
 If either prints `command not found`, install Node first:
 
-- **macOS** — `brew install node@22`, or the installer from https://nodejs.org
+- **macOS** — download the macOS installer (`.pkg`) from https://nodejs.org and
+  double-click it; no terminal needed. (`brew install node@22` also works, but
+  only if you already have Homebrew — it is not preinstalled on macOS.)
 - **Windows** — the LTS installer from https://nodejs.org, then reopen the terminal
 - **Linux (Debian/Ubuntu)** — `curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs`
 - **Any OS, multiple versions** — [nvm](https://github.com/nvm-sh/nvm) (or
