@@ -15,9 +15,29 @@ indigo (`#2f3293`) and gold (`#fcc514`), taken from the corporate logo.
 - **TypeScript**
 - Every route is prerendered as static HTML — no database, no server runtime required.
 
+## Requirements
+
+**Node.js 20.9 or newer** (Node 22 LTS recommended) — `npm` ships with it.
+Check what you have:
+
+```bash
+node -v
+npm -v
+```
+
+If either prints `command not found`, install Node first:
+
+- **macOS** — `brew install node@22`, or the installer from https://nodejs.org
+- **Windows** — the LTS installer from https://nodejs.org, then reopen the terminal
+- **Linux (Debian/Ubuntu)** — `curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs`
+- **Any OS, multiple versions** — [nvm](https://github.com/nvm-sh/nvm) (or
+  [nvm-windows](https://github.com/coreybutler/nvm-windows)), then `nvm use` in
+  this folder to pick up the version in `.nvmrc`
+
 ## Running it
 
 ```bash
+cd aziki-medical-website   # the folder containing package.json
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # production build
