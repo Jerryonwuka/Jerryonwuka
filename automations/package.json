@@ -1,0 +1,23 @@
+{
+  "name": "@jerry/automations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent automation engine: durable workflows, typed connectors, Claude-driven steps.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "cli": "node --experimental-strip-types --no-warnings src/cli.ts",
+    "demo": "node --experimental-strip-types --no-warnings src/cli.ts run outreach --simulate --reset",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.124.0"
+  },
+  "dependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "~5.9"
+  }
+}

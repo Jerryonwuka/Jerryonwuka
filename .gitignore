@@ -12,3 +12,8 @@ yarn-error.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# automations engine
+automations/.data/
+automations/node_modules/
+automations/.env
