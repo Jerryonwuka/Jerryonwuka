@@ -112,13 +112,37 @@ categories share an image.
 5. **Domain and analytics.** `siteUrl` in `src/app/layout.tsx` and
    `src/app/sitemap.ts` / `robots.ts` is set to `https://www.azikimedical.com`.
 
-## Deploying
+## Deploying to Vercel
 
-Static output, so anything works. Easiest is Vercel:
+No local setup needed — Vercel builds from GitHub.
 
-```bash
-npx vercel        # or connect the GitHub repo at vercel.com
-```
+1. Sign in at [vercel.com](https://vercel.com) with **Continue with GitHub**.
+2. **Add New… → Project**, then **Import** this repository. Grant Vercel access
+   to it if prompted.
+3. Leave every build setting alone. Vercel detects Next.js and uses
+   `npm install` / `npm run build` with the repo root as the root directory.
+   No environment variables are required for the first deploy.
+4. **Deploy.** The first build takes a couple of minutes and ends on a live
+   `*.vercel.app` URL.
+
+Every push to the default branch redeploys production automatically; any other
+branch or pull request gets its own preview URL.
+
+### Connecting azikimedical.com
+
+1. Project → **Settings → Domains → Add**, enter `www.azikimedical.com` (add
+   the apex `azikimedical.com` too and let Vercel redirect it to `www`).
+2. Vercel shows the DNS records to create at the domain registrar — usually a
+   `CNAME` for `www` and an `A` record for the apex. Propagation is typically
+   minutes, and the TLS certificate is issued automatically.
+3. Then set `NEXT_PUBLIC_SITE_URL=https://www.azikimedical.com` under
+   **Settings → Environment Variables** and redeploy, so canonical URLs,
+   Open Graph tags, `sitemap.xml` and `robots.txt` use the real domain. Until
+   that variable is set the deployment's own URL is used (see
+   `src/lib/site-url.ts` and `.env.example`), so nothing ever points at a
+   domain that does not resolve yet.
+
+### Other hosts
 
 Netlify, Cloudflare Pages and Render all work with the default Next.js build
 settings (`npm run build`).

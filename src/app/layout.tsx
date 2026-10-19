@@ -3,14 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
 import { company } from "@/data/site";
+import { siteUrl } from "@/lib/site-url";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
-
-const siteUrl = "https://www.azikimedical.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { productCategories, services } from "@/data/site";
-
-const baseUrl = "https://www.azikimedical.com";
+import { siteUrl as baseUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/products", "/solutions", "/support", "/projects", "/about", "/contact"];
